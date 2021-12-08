@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import './styles/App.css'
 
 // Components
@@ -14,7 +14,7 @@ const App = () => {
       <main>
         <Routes>
         <Route path='/' element={<Landing/>}/>
-        <Route path='burgershop' element={<BurgerShop/>}/>
+        <Route path='/burgers' element={<BurgerShop/>}/>
       </Routes>
       </main>
     </>

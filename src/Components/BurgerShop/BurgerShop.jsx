@@ -1,10 +1,8 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import '../../styles/burger.css'
-
 import { ingredients } from '../../data/burger-data'
-import IngredientList from '../BurgerShop/IngredientList'
-import BurgerStack from '../BurgerShop/BurgerStack'
+import IngredientList from './IngredientList'
+import BurgerStack from './BurgerStack'
 
 const BurgerShop = () => {
   console.log(ingredients)
