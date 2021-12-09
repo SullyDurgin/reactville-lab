@@ -13,6 +13,7 @@ const BurgerStack = (props) => {
     )
   }
 
+
   return (
     <ul className="burger-stack">
       {props.ingredients.map((ingredient, idx) => (
