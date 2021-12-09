@@ -1,23 +1,32 @@
 import React, { useState } from 'react'
 import '../../styles/burger.css'
+
 import { ingredients } from '../../data/burger-data'
 import IngredientList from './IngredientList'
 import BurgerStack from './BurgerStack'
 
 const BurgerShop = () => {
-  console.log(ingredients)
-  
+
   const [stack, setStack] = useState([])
+
+  const addToBurger = (burgerAdd) => {
+    console.log('burger choice', burgerAdd)
+    setStack([...stack, burgerAdd])
+  }
+
+  const removeFromBurger = (index) => {
+    setStack(stack.filter((burg, idx) => idx !== index))
+  }
 
   return (
     <div className="burger-shop">
       <nav>
         <h1>Burger Shop</h1>
-        <button>Clear Order</button>
+        <button onClick={() => setStack([])}>Clear Order</button>
       </nav>
       <section>
-        <IngredientList />
-        <BurgerStack />
+        <IngredientList addToBurger={addToBurger} stack={stack} ingredients={ingredients}/>
+        <BurgerStack removeFromBurger={removeFromBurger} ingredients={stack}/>
       </section>
     </div>
   )

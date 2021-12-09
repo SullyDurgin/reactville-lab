@@ -1,9 +1,15 @@
+
+   
 import React from "react"
+import Ingredient from "./Ingredient"
 
 const IngredientList = (props) => {
+
 	return (
 		<ul>
-			Use the map function and the Ingredient component here
+			{props.ingredients.map((ingredient, index) => (
+				<Ingredient addToBurger={props.addToBurger} key={index} ingredient={ingredient}/>
+			))}
 		</ul>
 	)
 }

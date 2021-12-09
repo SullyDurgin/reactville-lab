@@ -1,9 +1,23 @@
-import React from "react"
 
-const BurgerStack = () => {
+   
+import React from "react"
+import Ingredient from './Ingredient'
+
+const BurgerStack = (props) => {
+
+  if(!props.ingredients.length) {
+    return(
+      <ul className="burger-stack">
+        <div>No ingredients</div>
+      </ul>
+    )
+  }
+
   return (
     <ul className="burger-stack">
-      Use the map function and the Ingredient component here
+      {props.ingredients.map((ingredient, idx) => (
+				<Ingredient key={idx} idx={idx} ingredient={ingredient} removeFromBurger={props.removeFromBurger} />
+			)).reverse()}
     </ul>
   )
 }
