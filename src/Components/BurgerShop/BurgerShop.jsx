@@ -15,7 +15,7 @@ const BurgerShop = () => {
   }
 
   const removeFromBurger = (index) => {
-    setStack(stack.filter((burg, idx) => idx !== index))
+    setStack(stack.filter((idx) => idx !== index))
   }
 
   return (
