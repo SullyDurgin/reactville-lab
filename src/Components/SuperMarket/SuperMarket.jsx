@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import '../../styles/super-market.css'
 
@@ -12,13 +11,15 @@ const SuperMarket = () => {
   console.log(products)
 
   const [cart, setCart] = useState([])
-  const [productCategory, setProductCategory] =('Produce')
+  const [productCategory, setProductCategory] = useState('Produce')
+
+  console.log('product category', productCategory)
 
   return (
     <div className="super-market">
       <section>
-        <MarketNav products={products}/>
-        <DisplayProducts products={products}/>
+        <MarketNav products={products} setProductCategory={setProductCategory}/>
+        <DisplayProducts products={products} productCategory={productCategory}/>
       </section>
 
       <Cart/>

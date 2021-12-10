@@ -6,7 +6,6 @@ const Product = (props) => {
       <img src={props.product.image} alt={props.product.name} />
       <section>
         <span>
-          
           <p id="product-name">{props.product.name}</p>
           <p id="product-price">${props.product.price}</p>
         </span>
