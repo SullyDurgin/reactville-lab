@@ -13,7 +13,7 @@ const Cart = (props) => {
 
   const handleCheckout = () => {
     const checkoutStatus = props.handleExchange(total)
-    checkoutStatus ? clearCart() : setMessage("Payment declined")
+    checkoutStatus ? clearCart() : setMessage("Payment Declined")
   }
 
   const clearCart = () => {
@@ -21,16 +21,14 @@ const Cart = (props) => {
     setMessage("")
   }
 
+
   return (
     <div className="cart">
       <h3>Cart</h3>
       <p>{message}</p>
+
       {props.cart.map((item, idx) => (
-        <CartItem 
-          key={idx}
-          item={item}
-          removeFromCart={props.removeFromCart}
-        />
+        <CartItem key={idx} item={item} removeFromCart={props.removeFromCart} />
       ))}
 
       <div className="cart-total">
