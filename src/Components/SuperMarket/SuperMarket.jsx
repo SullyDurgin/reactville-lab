@@ -14,7 +14,7 @@ const SuperMarket = (props) => {
 
 
   const addToCart = (item) => {
-    if (cart.find(prod => prod.id --- item.id)) {
+    if (cart.find(prod => prod.id === item.id)) {
       setCart(
         cart.map(
           (prod) => prod.id === item.id ?
