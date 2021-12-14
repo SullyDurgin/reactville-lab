@@ -3,12 +3,17 @@ import Product from './Product'
 
 const DisplayProducts = (props) => {
   
-  // if(props.products.category === props.productCategory)
+  const selectedProducts = props.products.map((product, idx) => {
+    return product.category === props.productCategory &&
+    <Product 
+      product={product} 
+      key={idx} 
+      addToCart={props.addToCart}
+    />
+  })
   return (
     <div className="product-list">
-      {props.products.map((product, index) => (
-        product.category === props.productCategory && <Product product={product} key={index}/>
-      ))}
+      {selectedProducts}
     </div>
   )
 }
